@@ -24,26 +24,6 @@ const Watch = () => {
         {/* Content Layer */}
         <div className="relative z-[2] w-full h-full">
           <Header />
-
-          {/* Audio Control + Info */}
-          <div className="flex items-center gap-2 sm:gap-4 absolute top-2 left-2 sm:top-3 sm:left-3 md:top-5 md:left-5">
-            <div className="relative cursor-pointer">
-              <img
-                src={assets.buffer}
-                alt="music buffer"
-                className="h-6 sm:h-7 md:h-9 object-contain transition-opacity duration-200"
-              />
-            </div>
-
-            <div className="text-white">
-              <h1 className="text-[8px] sm:text-[10px] md:text-[14px] font-semibold leading-tight">
-                De Onde Vem
-              </h1>
-              <h1 className="text-[8px] sm:text-[10px] md:text-[14px] text-[#A6A6A6] leading-tight">
-                Avila Santo
-              </h1>
-            </div>
-          </div>
         </div>
       </div>
 

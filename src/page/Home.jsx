@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import { assets } from "../assets/assets";
 import CursorText from "../components/CursorText";
 import { useNavigate } from "react-router-dom";
+import Popup from "../components/Popup";
 import { MdVolumeOff, MdVolumeUp, MdKeyboardArrowDown } from "react-icons/md";
 
 const Home = () => {
@@ -55,7 +56,7 @@ const Home = () => {
         style={{ zIndex: "-111111111111111111111111111111111111111111111111" }}
         onClick={handleStartAudio}
       >
-        <div className="relative w-full h-[100vh] md:h-[100vh] overflow-hidden ">
+        <div className="relative w-full h-[100vh] overflow-hidden">
           <audio ref={audioRef} src={assets.audio} loop autoPlay />
 
           {/* Background Video */}
@@ -66,59 +67,29 @@ const Home = () => {
               loop
               muted
               playsInline
-              className="w-[380px] h-[380px] md:w-[630px] md:h-[630px] object-cover z-[1] vedio-hero"
+              className="w-[380px] h-[380px] md:w-[630px] md:h-[630px] object-cover z-[1]"
             ></video>
             <div
-              className="w-[380px] h-[380px] rounded-full md:w-[630px] md:h-[630px] absolute object-cover z-[2]"
+              className="w-[380px] h-[380px] rounded-full md:w-[630px] md:h-[630px] absolute object-cover z-[40] vedio-hero"
               onClick={handleToggleAudio}
               ref={sectionRef}
             ></div>
           </div>
 
-          <div className="flex items-center gap-2 bg-transparent sm:gap-4 absolute top-2 left-2 sm:top-3 sm:left-3 md:top-5 md:left-5 ">
-            {/* Buffer/Audio Control Container */}
-            <div
-              className="relative cursor-pointer"
-              onMouseEnter={() => setIsHoveringBuffer(true)}
-              onMouseLeave={() => setIsHoveringBuffer(false)}
-              onClick={handleToggleAudio}
-            >
-              <img
-                src={assets.buffer}
-                alt="music buffer"
-                className={`h-6 sm:h-7 md:h-9 object-contain transition-opacity duration-200 ${
-                  isHoveringBuffer ? "opacity-0" : "opacity-100"
-                }`}
-              />
-              {isHoveringBuffer && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  {isMuted ? (
-                    <MdVolumeOff className="text-white text-lg sm:text-xl md:text-2xl" />
-                  ) : (
-                    <MdVolumeUp className="text-white text-lg sm:text-xl md:text-2xl" />
-                  )}
-                </div>
-              )}
-            </div>
-
-            <div className="text-white z-[11111111111111111111111111111]">
-              <h1 className="text-[8px] md:text-[14px] ">De Onde Vem</h1>
-              <h1 className="text-[8px] md:text-[14px] text-[#A6A6A6] ">
-                Avila Santo
-              </h1>
-            </div>
+          {/* Header */}
+          <div className="absolute inset-0 flex flex-col justify-between z-[3]">
+            <Header
+              handleToggleAudio={handleToggleAudio}
+              isMuted={isMuted}
+              isHoveringBuffer={isHoveringBuffer}
+              setIsHoveringBuffer={setIsHoveringBuffer}
+            />
           </div>
 
-          {/* Popup */}
-          {/* {popup && <Popup setPopup={setPopup} />} */}
+          {/* Cursor Text */}
           <div className="bg-black relative">
             {!popup && <CursorText isMuted={isMuted} sectionRef={sectionRef} />}
           </div>
-        </div>
-
-        {/* Header + Info */}
-        <div className="absolute inset-0 flex flex-col justify-between z-[3]">
-          <Header />
         </div>
       </div>
 
@@ -165,9 +136,11 @@ const Home = () => {
           />
         </div>
       </section>
-      {/* <div className="bg-black relative">
-        <CursorText isMuted={isMuted} sectionRef={sectionRef} />
-      </div> */}
+
+      {/* popup */}
+      <div className="">
+        <Popup />
+      </div>
     </>
   );
 };

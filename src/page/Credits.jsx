@@ -204,24 +204,6 @@ const Credits = () => {
   }, []);
   return (
     <div className="bg-black">
-      <div className="flex items-center gap-2 sm:gap-4 absolute top-2 left-2 sm:top-3 sm:left-3 md:top-5 md:left-5">
-        <div className="relative cursor-pointer">
-          <img
-            src={assets.buffer}
-            alt="music buffer"
-            className="h-6 sm:h-7 md:h-9 object-contain transition-opacity duration-200"
-          />
-        </div>
-
-        <div className="text-white">
-          <h1 className="text-[8px] md:text-[14px] font-semibold">
-            De Onde Vem
-          </h1>
-          <h1 className="text-[8px] md:text-[14px] text-[#A6A6A6]">
-            Avila Santo
-          </h1>
-        </div>
-      </div>
       <Header />
       <div className="bg-black pt-0">
         <div
