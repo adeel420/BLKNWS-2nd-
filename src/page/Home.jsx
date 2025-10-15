@@ -94,12 +94,12 @@ const Home = () => {
       </div>
 
       {/* ======================= COMING SOON SECTION ======================= */}
-      <section className="bg-black text-white flex flex-col items-center px-4 sm:px-6 lg:px-12 py-10 md:py-16">
+      <section className="bg-black text-white flex flex-col items-center px-0 sm:px-6 lg:px-12 py-10 md:py-16">
         {/* Logo */}
         <img
           src={assets.textLogo}
           alt="BLKNWS Logo"
-          className="h-[70px] sm:h-[100px] md:h-[130px] object-contain mb-4"
+          className="h-[70px] self-center ml-[-20px] md:ml-0 sm:h-[100px] md:h-[130px] object-contain mb-4"
         />
 
         {/* Title */}

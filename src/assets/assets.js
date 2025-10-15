@@ -1,5 +1,6 @@
 import video from "./images/video.mp4";
 import promo from "./images/promo.mp4";
+import videoWatch from "./images/video-watch.mp4";
 import audio from "./images/audio.mp3";
 import buffer from "./images/buffer.png";
 import textLogo from "./images/text-logo.png";
@@ -26,4 +27,5 @@ export const assets = {
   watch4,
   watch5,
   audio,
+  videoWatch,
 };

@@ -1,11 +1,12 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./page/Home";
 import Footer from "./components/Footer";
 import Credits from "./page/Credits";
 import Watch from "./page/Watch";
 
 function App() {
+  const location = useLocation();
   return (
     <>
       <Routes>
@@ -13,7 +14,13 @@ function App() {
         <Route path="/credits" element={<Credits />} />
         <Route path="/watch" element={<Watch />} />
       </Routes>
-      <Footer />
+      {location.pathname === "/" ? (
+        <div className="mt-[-50px] ">
+          <Footer />
+        </div>
+      ) : (
+        <Footer />
+      )}
     </>
   );
 }
