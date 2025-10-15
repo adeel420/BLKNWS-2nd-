@@ -52,20 +52,36 @@ const Header = ({
         </div>
 
         {/* Right: Navigation */}
-        <nav className="flex flex-wrap justify-center md:justify-end gap-3 sm:gap-3 md:gap-8 text-xs sm:text-xs md:text-[16px] font-bold">
-          <Link to="/" className="hover:text-gray-300 transition-colors">
+        <nav
+          className="
+    flex 
+    w-full justify-between items-center text-center  /* full width + space between */
+    md:w-auto md:justify-end md:text-right  /* right-aligned on desktop */
+    px-0
+    gap-0 md:gap-8 
+    text-xs sm:text-sm md:text-[16px] 
+    font-bold
+  "
+        >
+          <Link to="/" className="flex-1 hover:text-gray-300 transition-colors">
             HOME
           </Link>
-          <Link to="/watch" className="hover:text-gray-300 transition-colors">
+          <Link
+            to="/watch"
+            className="flex-1 hover:text-gray-300 transition-colors"
+          >
             WATCH
           </Link>
-          <Link to="/" className="hover:text-gray-300 transition-colors">
+          <Link to="/" className="flex-1 hover:text-gray-300 transition-colors">
             COMMUNITY
           </Link>
-          <Link to="/credits" className="hover:text-gray-300 transition-colors">
+          <Link
+            to="/credits"
+            className="flex-1 hover:text-gray-300 transition-colors"
+          >
             CREDITS
           </Link>
-          <Link to="/" className="hover:text-gray-300 transition-colors">
+          <Link to="/" className="flex-1 hover:text-gray-300 transition-colors">
             RSVP
           </Link>
         </nav>
