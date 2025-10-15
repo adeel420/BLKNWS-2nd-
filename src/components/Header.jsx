@@ -52,7 +52,7 @@ const Header = ({
         </div>
 
         {/* Right: Navigation */}
-        <nav className="flex flex-wrap justify-end md:justify-end gap-3 sm:gap-3 md:gap-8 text-xs sm:text-xs md:text-[16px] font-bold">
+        <nav className="flex flex-wrap justify-center md:justify-end gap-3 sm:gap-3 md:gap-8 text-xs sm:text-xs md:text-[16px] font-bold">
           <Link to="/" className="hover:text-gray-300 transition-colors">
             HOME
           </Link>
