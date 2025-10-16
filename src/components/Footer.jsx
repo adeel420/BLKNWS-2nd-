@@ -23,9 +23,17 @@ const Footer = () => {
         </button>
         <a
           href="https://www.youtube.com/watch?v=bfSphlAyHLs&feature=youtu.be"
+          target="_blank"
           className="px-1 flex gap-2 md:gap-4 items-center justify-center sm:px-2 py-1.5 sm:py-2 cursor-pointer transition text-center "
         >
           T E A S E R
+        </a>
+        <a
+          href="/privacy-policy"
+          target="_blank"
+          className="px-1 flex gap-2 md:gap-4 items-center justify-center sm:px-2 py-1.5 sm:py-2 cursor-pointer transition text-center "
+        >
+          Privacy Policy
         </a>
       </div>
       {/* Copyright Text */}

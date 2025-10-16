@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { assets } from "../assets/assets";
 import DiagonalBox from "./DiagonalBox";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 
 const allCities = [
   { city: "Atlanta, GA", group: "United States" },
@@ -359,7 +359,14 @@ const Popup = ({ setPopup }) => {
                 />
                 <label className="text-xs w-[80%] sm:text-sm md:text-sm font-normal">
                   I agree to receive marketing emails and understand that my
-                  data may be used for remarketing and profiling
+                  data may be used for remarketing and profiling{" "}
+                  <Link
+                    className="cursor-pointer font-bold"
+                    target="_blank"
+                    to={"/privacy-policy"}
+                  >
+                    Privacy Policy
+                  </Link>
                 </label>
               </div>
 
