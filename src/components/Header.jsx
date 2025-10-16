@@ -12,7 +12,7 @@ const Header = ({
   return (
     <header className="w-full bg-transparent text-white z-50 px-4 sm:px-6 py-4">
       {/* Desktop layout (flex row) / Mobile layout (flex col-reverse) */}
-      <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-left md:items-center justify-between gap-4 md:gap-0">
+      <div className="max-w-7xl mx-auto flex md:flex-row items-left md:items-center justify-between gap-4 md:gap-0">
         {/* Left: Buffer / Audio Control */}
         <div className="flex items-center gap-2 sm:gap-3 relative">
           {/* Buffer Control */}
@@ -42,10 +42,10 @@ const Header = ({
 
           {/* Track Info */}
           <div className="text-white">
-            <h1 className="text-[8px] md:text-[14px] font-semibold">
+            <h1 className="text-[6px] md:text-[14px] font-semibold">
               De Onde Vem
             </h1>
-            <h1 className="text-[8px] md:text-[14px] text-[#A6A6A6]">
+            <h1 className="text-[6px] md:text-[14px] text-[#A6A6A6]">
               Avila Santo
             </h1>
           </div>
@@ -58,8 +58,8 @@ const Header = ({
     w-full justify-between items-center text-center  /* full width + space between */
     md:w-auto md:justify-end md:text-right  /* right-aligned on desktop */
     px-0
-    gap-0 md:gap-8 
-    text-xs sm:text-sm md:text-[16px] 
+    gap-1 md:gap-8 
+    text-[10px] sm:text-sm md:text-[16px] 
     font-bold
   "
         >
