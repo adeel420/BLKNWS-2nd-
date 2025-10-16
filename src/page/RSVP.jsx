@@ -81,7 +81,7 @@ const RSVP = () => {
       {/* ✅ Popup now appears above hero section */}
 
       <div
-        className="fixed inset-0 flex items-center justify-center z-[9999] top-[50%] "
+        className="fixed inset-0 flex items-center justify-center z-[9999] top-[50%] md:top-[0] "
         // onClick={handleBackdropClick}
       >
         <div onClick={(e) => e.stopPropagation()}>
