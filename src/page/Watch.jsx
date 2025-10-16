@@ -147,7 +147,7 @@ const Watch = () => {
       {/* <img src={assets.watch4} alt="BLKNWS Secondary" /> */}
 
       {/* Tour Section */}
-      <main className="min-h-screen w-full mt-[-80px] bg-black text-white">
+      <main className=" w-full mt-[-80px] bg-black text-white">
         <div className="h-24 md:h-28 w-full lg:h-32" />
         <div className="w-full">
           <div className="" aria-hidden="true" />
