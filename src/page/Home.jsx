@@ -174,7 +174,7 @@ const Home = () => {
       </section>
 
       {/* popup */}
-      <div className="">
+      <div className="mt-[-30px] ">
         <Popup />
       </div>
     </>
