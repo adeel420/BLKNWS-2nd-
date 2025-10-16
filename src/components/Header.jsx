@@ -42,7 +42,7 @@ const Header = ({
 
           {/* Track Info */}
           <div className="text-white">
-            <h1 className="text-[6px] md:text-[14px] font-semibold">
+            <h1 className="text-[6px] whitespace-nowrap md:text-[14px] font-semibold">
               De Onde Vem
             </h1>
             <h1 className="text-[6px] md:text-[14px] text-[#A6A6A6]">
