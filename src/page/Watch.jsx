@@ -6,10 +6,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 // Reusable TourRow component
 const TourRow = ({ title, venue, date }) => {
   return (
-    <section
-      className={`w-full py-12 md:py-14 lg:py-16 text-center`}
-      aria-label={title}
-    >
+    <section className={`w-full  text-center`} aria-label={title}>
       <h2 className="mx-auto max-w-4xl text-3xl md:text-5xl lg:text-5xl font-extrabold uppercase tracking-wide">
         {title}
       </h2>
@@ -83,9 +80,11 @@ const Watch = () => {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover
+               sm:rotate-0 sm:scale-100
+               [transform-origin:center_center]
+               max-sm:rotate-90 max-sm:scale-[1.8]"
         />
-
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/40 z-[1]" />
 
@@ -100,12 +99,12 @@ const Watch = () => {
         <img
           src={assets.textLogo}
           alt="BLKNWS Logo"
-          className="h-[70px] sm:h-[100px] md:h-[130px] object-contain mb-6"
+          className="h-[70px] ml-[-18px] md:ml-0 sm:h-[100px] md:h-[130px] object-contain mb-3"
         />
         <img
           src={assets.watch2}
           alt="BLKNWS Secondary"
-          className="h-[60px] sm:h-[90px] md:h-[100px] w-[240px] sm:w-[300px] md:w-[360px] object-contain mb-6"
+          className="h-[40px] sm:h-[40px] md:h-[100px] w-[220px] sm:w-[220px] md:w-[360px] object-contain mb-6"
         />
 
         {/* Custom Select Box */}
@@ -140,18 +139,18 @@ const Watch = () => {
       </div>
 
       {/* 3rd Section */}
-      <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 py-10 md:py-16">
+      <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 ">
         <img
           src={assets.watch3}
           alt="BLKNWS Secondary"
-          className="h-[60px] sm:h-[90px] md:h-[100px] w-[240px] sm:w-[300px] md:w-[560px] object-contain mb-6"
+          className="h-[60px] sm:h-[90px] md:h-[100px] w-[240px] sm:w-[300px] md:w-[560px] object-contain"
         />
       </div>
 
       {/* <img src={assets.watch4} alt="BLKNWS Secondary" /> */}
 
       {/* Tour Section */}
-      <main className="min-h-screen w-full bg-black text-white">
+      <main className="min-h-screen w-full mt-[-80px] bg-black text-white">
         <div className="h-24 md:h-28 w-full lg:h-32" />
         <div className="w-full">
           <div className="" aria-hidden="true" />
