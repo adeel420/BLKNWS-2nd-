@@ -12,6 +12,7 @@ import watch2 from "./images/watch2.png";
 import watch3 from "./images/watch3.png";
 import watch4 from "./images/watch4.png";
 import watch5 from "./images/watch5.png";
+import thumbnail from "./images/thumbnail.png";
 
 export const assets = {
   video,
@@ -28,4 +29,5 @@ export const assets = {
   watch5,
   audio,
   videoWatch,
+  thumbnail,
 };

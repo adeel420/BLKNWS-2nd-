@@ -72,7 +72,10 @@ const Header = ({
           >
             WATCH
           </Link>
-          <Link to="/" className="flex-1 hover:text-gray-300 transition-colors">
+          <Link
+            to="/community"
+            className="flex-1 hover:text-gray-300 transition-colors"
+          >
             COMMUNITY
           </Link>
           <Link
@@ -81,7 +84,10 @@ const Header = ({
           >
             CREDITS
           </Link>
-          <Link to="/" className="flex-1 hover:text-gray-300 transition-colors">
+          <Link
+            to="/rsvp"
+            className="flex-1 hover:text-gray-300 transition-colors"
+          >
             RSVP
           </Link>
         </nav>

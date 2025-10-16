@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import Credits from "./page/Credits";
 import Watch from "./page/Watch";
 import Privacy_Policy from "./page/Privacy_Policy";
+import RSVP from "./page/RSVP";
+import Community from "./page/Community";
 
 function App() {
   const location = useLocation();
@@ -15,6 +17,8 @@ function App() {
         <Route path="/credits" element={<Credits />} />
         <Route path="/watch" element={<Watch />} />
         <Route path="/privacy-policy" element={<Privacy_Policy />} />
+        <Route path="/rsvp" element={<RSVP />} />
+        <Route path="/community" element={<Community />} />
       </Routes>
       {location.pathname === "/" ? (
         <div className="mt-[-350px] md:mt-0 ">

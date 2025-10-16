@@ -251,11 +251,18 @@ const Popup = ({ setPopup }) => {
   };
 
   return (
-    <div className="bg-black flex flex-col justify-center items-center pt-6 ">
-      <h1 className="text-center max-w-[95%] sm:max-w-[600px] md:max-w-[800px] mt-4 text-xs sm:text-sm md:text-base leading-relaxed text-white">
-        Sign up to join the BLKNWS community. Get exclusive access to release
-        updates, deep dives, behind-the-scenes, and community resources.
-      </h1>
+    <div
+      className={`flex flex-col justify-center items-center ${
+        location.pathname === "/rsvp" ? "bg-transparent" : "bg-black"
+      }`}
+    >
+      {location.pathname !== "/rsvp" && (
+        <h1 className="text-center max-w-[95%] sm:max-w-[600px] md:max-w-[800px] text-xs sm:text-sm md:text-base leading-relaxed text-white">
+          Sign up to join the BLKNWS community. Get exclusive access to release
+          updates, deep dives, behind-the-scenes, and community resources.
+        </h1>
+      )}
+
       <div
         className="w-full max-w-sm sm:max-w-lg md:max-w-2xl relative p-1 sm:p-6 md:p-8 
                    my-2 sm:my-8 

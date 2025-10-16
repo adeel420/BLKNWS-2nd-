@@ -13,6 +13,15 @@ const Home = () => {
   const sectionRef = useRef(null);
   const [isHoveringBuffer, setIsHoveringBuffer] = useState(false);
   const [popup, setPopup] = useState(false);
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
 
   const audioRef = useRef(null);
 
@@ -125,15 +134,42 @@ const Home = () => {
         </p>
 
         {/* Promo Video */}
-        <div className="w-full max-w-[800px] mt-8 aspect-video rounded-2xl overflow-hidden shadow-lg">
+        <div className="relative w-full max-w-[800px] mt-8 aspect-video rounded-2xl overflow-hidden shadow-lg">
+          {/* Thumbnail (only visible when not playing) */}
+          {!isPlaying && (
+            <img
+              src={assets.thumbnail}
+              alt="Video thumbnail"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          )}
+
+          {/* Video (behind thumbnail until playing) */}
           <video
-            src={assets.promo}
-            autoPlay
+            ref={videoRef}
+            src={assets.videoWatch}
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className={`w-full h-full object-cover transition-opacity duration-700 ${
+              isPlaying ? "opacity-100" : "opacity-0"
+            }`}
           />
+
+          {/* Overlay with play button */}
+          {!isPlaying && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+              <button
+                onClick={handlePlay}
+                className="text-white flex flex-col gap-2 font-semibold text-sm sm:text-5xl  cursor-pointer"
+              >
+                <span>▶</span>
+                <span className="text-xl font-normal ">ACTION</span>{" "}
+                <span>WATCH</span>
+                <span>TRAILER</span>
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
