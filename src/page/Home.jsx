@@ -103,7 +103,7 @@ const Home = () => {
       </div>
 
       {/* ======================= COMING SOON SECTION ======================= */}
-      <section className="bg-black text-white flex flex-col items-center px-0 sm:px-6 lg:px-12 py-10 md:py-16">
+      <section className="bg-black text-white flex flex-col items-center px-0 sm:px-6 lg:px-12 py-0 md:py-16">
         {/* Logo */}
         <img
           src={assets.textLogo}
@@ -174,7 +174,7 @@ const Home = () => {
       </section>
 
       {/* popup */}
-      <div className="mt-[-15px] ">
+      <div className="bg-black pt-8">
         <Popup />
       </div>
     </>

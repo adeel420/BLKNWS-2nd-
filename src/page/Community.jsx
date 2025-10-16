@@ -39,27 +39,27 @@ const ITEMS = [
 
 const Community = () => {
   return (
-    <div className="bg-black text-white min-h-screen p-8">
+    <div className="bg-black ">
       <Header />
 
-      {/* Header Section */}
-      <header className={cn("w-full")}>
-        <div className=" max-w-3xl px-2 md:px-2">
-          <div className="flex items-center justify-between py-4">
+      <div className="bg-black text-white min-h-screen px-2 sm:px-2 md:px-2 py-6 flex flex-col items-center">
+        {/* Header Section */}
+        <header className={cn("w-full max-w-4xl mb-8")}>
+          <div className="flex flex-wrap items-center justify-between gap-4 py-4">
             {/* Left: Name */}
             <Link
               to="#"
-              className=" text-sm md:text-base hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-ring/50 rounded-sm"
+              className="text-base sm:text-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-sm"
             >
               Dio Anthony
             </Link>
 
             {/* Center: bylines tag */}
             <div
-              className="hidden sm:flex items-center gap-2  text-sm opacity-80"
+              className="hidden sm:flex items-center gap-2 text-sm opacity-80"
               aria-label="Section: bylines"
             >
-              <Paperclip className="size-4" aria-hidden="true" />
+              <Paperclip className="w-4 h-4" aria-hidden="true" />
               <span>bylines</span>
             </div>
 
@@ -67,39 +67,40 @@ const Community = () => {
             <Link
               to="#"
               aria-label="Instagram"
-              className="p-1 rounded-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-ring/50"
+              className="p-1 rounded-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white/50"
             >
-              <Instagram className="size-5" />
+              <Instagram className="w-5 h-5" />
             </Link>
           </div>
-        </div>
-      </header>
+        </header>
 
-      {/* List Section */}
-      <section className=" w-full max-w-3xl px-2 md:px-2 pt-6 md:pt-10">
-        <h1 className=" text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-          BYLINE Highlights
-        </h1>
-        <p className=" text-[gray] text-sm md:text-base mt-2 opacity-80">
-          (Note: this is not the entirety of my work)
-        </p>
-        <ul className={cn("space-y-4 mt-6")}>
-          {ITEMS.map((item, i) => (
-            <li
-              key={i}
-              className=" text-[gray] flex items-center text-sm md:text-sm leading-snug"
-            >
-              <a
-                href={item.href || "#"}
-                className="inline-block border-b border-white/40 hover:border-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-sm underline-offset-2"
+        {/* List Section */}
+        <section className="w-full max-w-4xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight">
+            BYLINE Highlights
+          </h1>
+          <p className="text-gray-400 text-sm sm:text-base mt-2">
+            (Note: this is not the entirety of my work)
+          </p>
+
+          <ul className={cn("space-y-4 mt-6")}>
+            {ITEMS.map((item, i) => (
+              <li
+                key={i}
+                className="text-gray-300 text-sm sm:text-base md:text-lg leading-snug flex flex-wrap gap-1"
               >
-                {item.title}
-              </a>
-              <span className="italic opacity-80">, {item.date}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
+                <a
+                  href={item.href || "#"}
+                  className="inline-block border-b border-white/40 hover:border-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-sm underline-offset-2"
+                >
+                  {item.title}
+                </a>
+                <span className="italic opacity-80">, {item.date}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
     </div>
   );
 };
