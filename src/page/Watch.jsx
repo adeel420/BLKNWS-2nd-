@@ -72,7 +72,7 @@ const Watch = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative w-full h-[50vh] md:h-[100vh] overflow-hidden bg-black flex items-center justify-center">
+      <div className="relative w-full h-[30vh] md:h-[100vh] overflow-hidden bg-black flex items-center justify-center">
         {/* Background Video */}
         <video
           src={assets.videoWatch}
@@ -92,7 +92,7 @@ const Watch = () => {
       </div>
 
       {/* 2nd Section */}
-      <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 py-2 md:py-16">
+      <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 pb-4 md:py-16">
         <img
           src={assets.textLogo}
           alt="BLKNWS Logo"
