@@ -164,7 +164,7 @@ const Home = () => {
                 className="text-white flex flex-col gap-2 font-semibold text-sm sm:text-5xl  cursor-pointer"
               >
                 <span>▶</span>
-                <span className="text-xl font-normal ">ACTION</span>{" "}
+
                 <span>WATCH</span>
                 <span>TRAILER</span>
               </button>
