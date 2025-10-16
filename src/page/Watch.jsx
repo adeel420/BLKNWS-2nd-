@@ -72,18 +72,15 @@ const Watch = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative w-full h-[100vh] overflow-hidden bg-black flex items-center justify-center">
+      <div className="relative w-full h-[50vh] md:h-[100vh] overflow-hidden bg-black flex items-center justify-center">
         {/* Background Video */}
         <video
-          src={assets.videoWatch} // 👈 replace with your actual video path
+          src={assets.videoWatch}
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover
-               sm:rotate-0 sm:scale-100
-               [transform-origin:center_center]
-               max-sm:rotate-90 max-sm:scale-[1.8]"
+          className="absolute inset-0 w-full h-full object-contain md:object-cover object-top md:object-center bg-black"
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/40 z-[1]" />
