@@ -4,41 +4,47 @@ import { assets } from "../assets/assets";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 // Reusable TourRow component
-// const TourRow = ({ title, venue, date, withTopBorder = true }) => {
-//   return (
-//     <section
-//       className={`w-full py-12 md:py-14 lg:py-16 text-center ${
-//         withTopBorder ? "border-t border-gray-600 border-dotted" : ""
-//       }`}
-//       aria-label={title}
-//     >
-//       <h2 className="mx-auto max-w-4xl text-3xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wide">
-//         {title}
-//       </h2>
+const TourRow = ({ title, venue, date }) => {
+  return (
+    <section
+      className={`w-full py-12 md:py-14 lg:py-16 text-center`}
+      aria-label={title}
+    >
+      <h2 className="mx-auto max-w-4xl text-3xl md:text-5xl lg:text-5xl font-extrabold uppercase tracking-wide">
+        {title}
+      </h2>
 
-//       <p className="mt-3 md:mt-4 text-sm md:text-base opacity-80 font-serif italic">
-//         <span className="uppercase not-italic font-sans opacity-70">
-//           Venue:
-//         </span>{" "}
-//         {venue}
-//         <span className="ml-4 uppercase not-italic font-sans opacity-70">
-//           Date:
-//         </span>{" "}
-//         {date}
-//       </p>
+      <p className="mt-3 md:mt-4 text-sm md:text-base opacity-80 font-serif italic">
+        <span className="uppercase not-italic font-sans opacity-70">
+          Venue:
+        </span>{" "}
+        {venue}
+        <span className="ml-4 uppercase not-italic font-sans opacity-70">
+          Date:
+        </span>{" "}
+        {date}
+      </p>
 
-//       <div className="mt-5 flex items-start justify-center gap-3">
-//         <div className="w-[20%] bg-white text-[white] h-[0.1px]"></div>
-//         <button className="rounded-full border border-gray-500 text-white px-4 md:px-5 py-1.5 text-[11px] md:text-xs uppercase tracking-wider bg-transparent hover:bg-gray-800 transition">
-//           Remind me
-//         </button>
-//         <button className="rounded-full px-4 md:px-5 py-1.5 text-[11px] md:text-xs uppercase tracking-wider bg-white text-black hover:bg-gray-200 transition">
-//           Get tickets
-//         </button>
-//       </div>
-//     </section>
-//   );
-// };
+      <div className="flex items-center justify-center mt-2 w-full gap-0">
+        {/* Left line */}
+        <div className="flex-1 border-1 border border-dotted"></div>
+
+        {/* Buttons */}
+        <div className="flex items-center justify-center gap-1 font-bold">
+          <button className="rounded-full border border-gray-500 text-white px-4 md:px-5 py-1.5 text-[11px] md:text-xs uppercase tracking-wider bg-transparent hover:bg-gray-800 transition">
+            Remind me
+          </button>
+          <button className="rounded-full px-4 md:px-5 py-1.5 text-[11px] md:text-xs uppercase tracking-wider bg-white text-black hover:bg-gray-200 transition">
+            Get tickets
+          </button>
+        </div>
+
+        {/* Right line */}
+        <div className="flex-1 border-1 border border-dotted"></div>
+      </div>
+    </section>
+  );
+};
 
 const Watch = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -142,33 +148,23 @@ const Watch = () => {
         />
       </div>
 
-      <img src={assets.watch4} alt="BLKNWS Secondary" />
+      {/* <img src={assets.watch4} alt="BLKNWS Secondary" /> */}
 
       {/* Tour Section */}
-      {/* <main className="min-h-screen bg-black text-white">
-        <div className="h-24 md:h-28 lg:h-32" />
-        <div className="mx-auto w-full max-w-6xl px-4">
-          <div
-            className="border-t border-gray-600 border-dotted"
-            aria-hidden="true"
-          />
-
+      <main className="min-h-screen w-full bg-[#0c0c0c] text-white">
+        <div className="h-24 md:h-28 w-full lg:h-32" />
+        <div className="w-full">
+          <div className="" aria-hidden="true" />
           {tours.map((t, idx) => (
             <TourRow
               key={t.title}
               title={t.title}
               venue={t.venue}
               date={t.date}
-              withTopBorder={idx !== 0}
             />
           ))}
-
-          <div
-            className="border-t border-gray-600 border-dotted"
-            aria-hidden="true"
-          />
         </div>
-      </main> */}
+      </main>
 
       {/* Final Section */}
       <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 py-10 md:py-16">
