@@ -80,7 +80,7 @@ const Watch = () => {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-contain md:object-cover object-top md:object-center bg-black"
+          className="absolute inset-0 mt-12 md:mt-0 w-full h-full object-contain md:object-cover object-top md:object-center bg-black"
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/40 z-[1]" />
@@ -92,7 +92,7 @@ const Watch = () => {
       </div>
 
       {/* 2nd Section */}
-      <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 py-10 md:py-16">
+      <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 py-2 md:py-16">
         <img
           src={assets.textLogo}
           alt="BLKNWS Logo"
