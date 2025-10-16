@@ -372,7 +372,7 @@ const Popup = ({ setPopup }) => {
                     target="_blank"
                     to={"/privacy-policy"}
                   >
-                    Privacy Policy
+                    PRIVACY POLICY
                   </Link>
                 </label>
               </div>
