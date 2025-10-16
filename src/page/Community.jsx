@@ -47,12 +47,12 @@ const Community = () => {
         <header className={cn("w-full max-w-4xl mb-8")}>
           <div className="flex flex-wrap items-center justify-between gap-4 py-4">
             {/* Left: Name */}
-            <Link
+            {/* <Link
               to="#"
               className="text-base sm:text-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-sm"
             >
               Dio Anthony
-            </Link>
+            </Link> */}
 
             {/* Center: bylines tag */}
             <div

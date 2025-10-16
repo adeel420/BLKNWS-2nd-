@@ -78,12 +78,17 @@ const RSVP = () => {
         </div>
       </div>
       {/* Popup */}
+      {/* ✅ Popup now appears above hero section */}
+
       <div
-        className="absolute top-[50%] left-[50%] z-40"
-        style={{ transform: "translate(-50%, -50%)" }}
+        className="fixed inset-0 flex items-center justify-center z-[9999] top-[50%] "
+        // onClick={handleBackdropClick}
       >
-        <Popup setPopup={setPopup} />
+        <div onClick={(e) => e.stopPropagation()}>
+          <Popup setPopup={setPopup} />
+        </div>
       </div>
+
       <div className="bg-black relative">
         {/* aapka purana section code yahan */}
 
