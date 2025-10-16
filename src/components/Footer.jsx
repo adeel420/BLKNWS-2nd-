@@ -31,9 +31,9 @@ const Footer = () => {
         <Link
           to="/privacy-policy"
           target="_blank"
-          className="px-1 flex gap-2 md:gap-4 items-center justify-center sm:px-2 py-1.5 sm:py-2 cursor-pointer transition text-center "
+          className="px-1 flex gap-2 md:gap-4 items-center justify-center sm:px-2 py-1.5 sm:py-2 cursor-pointer transition text-center whitespace-nowrap "
         >
-          Privacy Policy
+          PRIVACY POLICY
         </Link>
       </div>
       {/* Copyright Text */}
