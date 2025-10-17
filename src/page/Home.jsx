@@ -190,7 +190,7 @@ const Home = () => {
         </section>
 
         {/* popup */}
-        <div className="bg-black w-[97.5%]  pt-8">
+        <div className="bg-black ml-4 md:ml-0 w-[97.5%]  pt-8">
           <Popup />
         </div>
       </div>
