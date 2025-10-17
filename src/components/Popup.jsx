@@ -307,7 +307,7 @@ const Popup = ({ setPopup }) => {
             )}
             {location.pathname === "/rsvp" && (
               <button
-                className="absolute top-5 right-15 block md:hidden "
+                className="absolute top-10 right-15 block md:hidden "
                 onClick={handleCloseClick}
               >
                 x
