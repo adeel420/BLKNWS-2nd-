@@ -372,7 +372,7 @@ const Popup = ({ setPopup }) => {
               <input type="hidden" name="location" value={selected} required />
             </div>
 
-            <div className="w-full space-y-1.5 sm:space-y-2 md:space-y-4 mt-3 sm:mt-6">
+            <div className="w-full space-y-1 sm:space-y-2 md:space-y-4 mt-1 sm:mt-1">
               <div className="flex items-center gap-2 sm:gap-3">
                 <input
                   type="checkbox"
