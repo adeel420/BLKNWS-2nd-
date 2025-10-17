@@ -58,133 +58,139 @@ const Home = () => {
   };
 
   return (
-    <>
-      {/* ======================= HERO SECTION ======================= */}
-      <div
-        className="bg-[black]"
-        style={{ zIndex: "-111111111111111111111111111111111111111111111111" }}
-        onClick={handleStartAudio}
-      >
-        <div className="relative w-full h-[100vh] overflow-hidden">
-          <audio ref={audioRef} src={assets.audio} loop autoPlay />
+    <div className="bg-black ">
+      <div className="w-[95%] md:w-[100%] ">
+        {/* ======================= HERO SECTION ======================= */}
+        <div
+          className="bg-[black]"
+          style={{
+            zIndex: "-111111111111111111111111111111111111111111111111",
+          }}
+          onClick={handleStartAudio}
+        >
+          <div className="relative w-full h-[100vh] overflow-hidden">
+            <audio ref={audioRef} src={assets.audio} loop autoPlay />
 
-          {/* Background Video */}
-          <div className="flex items-center justify-center w-full h-full relative">
-            <video
-              src={assets.video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-[380px] h-[380px] md:w-[630px] md:h-[630px] object-cover z-[1]"
-            ></video>
-            <div
-              className="w-[380px] h-[380px] rounded-full md:w-[630px] md:h-[630px] absolute object-cover z-[40] vedio-hero"
-              onClick={handleToggleAudio}
-              ref={sectionRef}
-            ></div>
-          </div>
+            {/* Background Video */}
+            <div className="flex items-center justify-center w-full h-full relative">
+              <video
+                src={assets.video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-[380px] h-[380px] md:w-[630px] md:h-[630px] object-cover z-[1]"
+              ></video>
+              <div
+                className="w-[380px] h-[380px] rounded-full md:w-[630px] md:h-[630px] absolute object-cover z-[40] vedio-hero"
+                onClick={handleToggleAudio}
+                ref={sectionRef}
+              ></div>
+            </div>
 
-          {/* Header */}
-          <div className="absolute inset-0 flex flex-col justify-between z-[3]">
-            <Header
-              handleToggleAudio={handleToggleAudio}
-              isMuted={isMuted}
-              isHoveringBuffer={isHoveringBuffer}
-              setIsHoveringBuffer={setIsHoveringBuffer}
-            />
-          </div>
+            {/* Header */}
+            <div className="absolute inset-0 flex flex-col justify-between z-[3]">
+              <Header
+                handleToggleAudio={handleToggleAudio}
+                isMuted={isMuted}
+                isHoveringBuffer={isHoveringBuffer}
+                setIsHoveringBuffer={setIsHoveringBuffer}
+              />
+            </div>
 
-          {/* Cursor Text */}
-          <div className="bg-black relative">
-            {!popup && <CursorText isMuted={isMuted} sectionRef={sectionRef} />}
+            {/* Cursor Text */}
+            <div className="bg-black relative">
+              {!popup && (
+                <CursorText isMuted={isMuted} sectionRef={sectionRef} />
+              )}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ======================= COMING SOON SECTION ======================= */}
-      <section className="bg-black text-white flex flex-col items-center px-0 sm:px-6 lg:px-12 py-0 md:py-16">
-        {/* Logo */}
-        <img
-          src={assets.textLogo}
-          alt="BLKNWS Logo"
-          className="h-[70px] self-center ml-[-20px] md:ml-0 sm:h-[100px] md:h-[130px] object-contain mb-4"
-        />
-
-        {/* Title */}
-        <p
-          className="font-bold text-base sm:text-lg md:text-xl tracking-wide"
-          style={{ fontFamily: "VTC Du Bois, sans-serif" }}
-        >
-          Coming Soon
-        </p>
-
-        {/* Description */}
-        <p
-          className="text-center max-w-[95%] sm:max-w-[600px] md:max-w-[800px] mt-4 text-xs sm:text-sm md:text-base leading-relaxed"
-          style={{ fontFamily: "VTC Du Bois, sans-serif" }}
-        >
-          Adapted from Kahlil Joseph’s renowned video art installation,
-          <span className="font-semibold"> BLKNWS: Terms & Conditions </span>
-          is a distinctive cinematic experience that mirrors the sonic textures
-          of a record album, weaving fiction and history in an immersive journey
-          where the fictionalized figures of W. E. B Du Bois and Marcus Garvey
-          join artists, musicians, Joseph’s family, and even Twitter chats, in a
-          vision for black consciousness.
-        </p>
-
-        {/* Promo Video */}
-        <div className="relative w-full max-w-[800px] mt-8 aspect-video rounded-2xl overflow-hidden shadow-lg">
-          {/* Thumbnail (only visible when not playing) */}
-          {!isPlaying && (
-            <img
-              src={assets.thumbnail}
-              alt="Video thumbnail"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          )}
-
-          {/* Video (behind thumbnail until playing) */}
-          <video
-            ref={videoRef}
-            src={assets.videoWatch}
-            loop
-            playsInline
-            className={`w-full h-full object-cover transition-opacity duration-700 ${
-              isPlaying ? "opacity-100" : "opacity-0"
-            }`}
+        {/* ======================= COMING SOON SECTION ======================= */}
+        <section className="bg-black text-white flex flex-col items-center px-0 sm:px-6 lg:px-12 py-0 md:py-16">
+          {/* Logo */}
+          <img
+            src={assets.textLogo}
+            alt="BLKNWS Logo"
+            className="h-[70px] self-center ml-[-20px] md:ml-0 sm:h-[100px] md:h-[130px] object-contain mb-4"
           />
 
-          {/* Overlay with play button */}
-          {!isPlaying && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-              <button
-                onClick={() => {
-                  handlePlay();
-                  if (audioRef.current) {
-                    audioRef.current.muted = true;
-                    setIsMuted(true);
-                  }
-                }}
-                className="text-white flex flex-col items-center gap-2 font-semibold text-sm sm:text-5xl  cursor-pointer"
-              >
-                <span>
-                  <img src={assets.play} className="h-[40px] w-[40px] " />
-                </span>
+          {/* Title */}
+          <p
+            className="font-bold text-base sm:text-lg md:text-xl tracking-wide"
+            style={{ fontFamily: "VTC Du Bois, sans-serif" }}
+          >
+            Coming Soon
+          </p>
 
-                <span>WATCH</span>
-                <span>TRAILER</span>
-              </button>
-            </div>
-          )}
+          {/* Description */}
+          <p
+            className="text-center max-w-[95%] sm:max-w-[600px] md:max-w-[800px] mt-4 text-xs sm:text-sm md:text-base leading-relaxed"
+            style={{ fontFamily: "VTC Du Bois, sans-serif" }}
+          >
+            Adapted from Kahlil Joseph’s renowned video art installation,
+            <span className="font-semibold"> BLKNWS: Terms & Conditions </span>
+            is a distinctive cinematic experience that mirrors the sonic
+            textures of a record album, weaving fiction and history in an
+            immersive journey where the fictionalized figures of W. E. B Du Bois
+            and Marcus Garvey join artists, musicians, Joseph’s family, and even
+            Twitter chats, in a vision for black consciousness.
+          </p>
+
+          {/* Promo Video */}
+          <div className="relative w-full max-w-[800px] mt-8 aspect-video rounded-2xl overflow-hidden shadow-lg">
+            {/* Thumbnail (only visible when not playing) */}
+            {!isPlaying && (
+              <img
+                src={assets.thumbnail}
+                alt="Video thumbnail"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
+
+            {/* Video (behind thumbnail until playing) */}
+            <video
+              ref={videoRef}
+              src={assets.videoWatch}
+              loop
+              playsInline
+              className={`w-full h-full object-cover transition-opacity duration-700 ${
+                isPlaying ? "opacity-100" : "opacity-0"
+              }`}
+            />
+
+            {/* Overlay with play button */}
+            {!isPlaying && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                <button
+                  onClick={() => {
+                    handlePlay();
+                    if (audioRef.current) {
+                      audioRef.current.muted = true;
+                      setIsMuted(true);
+                    }
+                  }}
+                  className="text-white flex flex-col items-center gap-2 font-semibold text-sm sm:text-5xl  cursor-pointer"
+                >
+                  <span>
+                    <img src={assets.play} className="h-[40px] w-[40px] " />
+                  </span>
+
+                  <span>WATCH</span>
+                  <span>TRAILER</span>
+                </button>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* popup */}
+        <div className="bg-black  pt-8">
+          <Popup />
         </div>
-      </section>
-
-      {/* popup */}
-      <div className="bg-black  pt-8">
-        <Popup />
       </div>
-    </>
+    </div>
   );
 };
 
