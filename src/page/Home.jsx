@@ -149,7 +149,6 @@ const Home = () => {
             ref={videoRef}
             src={assets.videoWatch}
             loop
-            muted
             playsInline
             className={`w-full h-full object-cover transition-opacity duration-700 ${
               isPlaying ? "opacity-100" : "opacity-0"
@@ -160,10 +159,18 @@ const Home = () => {
           {!isPlaying && (
             <div className="absolute inset-0 flex items-center justify-center bg-black/40">
               <button
-                onClick={handlePlay}
-                className="text-white flex flex-col gap-2 font-semibold text-sm sm:text-5xl  cursor-pointer"
+                onClick={() => {
+                  handlePlay();
+                  if (audioRef.current) {
+                    audioRef.current.muted = true;
+                    setIsMuted(true);
+                  }
+                }}
+                className="text-white flex flex-col items-center gap-2 font-semibold text-sm sm:text-5xl  cursor-pointer"
               >
-                <span>▶</span>
+                <span>
+                  <img src={assets.play} className="h-[40px] w-[40px] " />
+                </span>
 
                 <span>WATCH</span>
                 <span>TRAILER</span>
@@ -174,7 +181,7 @@ const Home = () => {
       </section>
 
       {/* popup */}
-      <div className="bg-black pt-8">
+      <div className="bg-black  pt-8">
         <Popup />
       </div>
     </>

@@ -21,11 +21,6 @@ body {
   }
 }
 @media only screen and (max-width: 768px) {
-  /* .vedio-hero{
-    width:380px;
-    height: 380px;
-
-  } */
   .popup-main{
     margin-top: 55vh;
   }

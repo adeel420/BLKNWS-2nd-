@@ -20,13 +20,14 @@ function App() {
         <Route path="/rsvp" element={<RSVP />} />
         <Route path="/community" element={<Community />} />
       </Routes>
-      {location.pathname === "/" ? (
+      {/* {location.pathname === "/" ? (
         <div className="mt-[-350px] md:mt-0 ">
           <Footer />
         </div>
       ) : (
         <Footer />
-      )}
+      )} */}
+      <Footer />
     </>
   );
 }

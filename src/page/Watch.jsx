@@ -92,16 +92,16 @@ const Watch = () => {
       </div>
 
       {/* 2nd Section */}
-      <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 pb-4 md:py-16">
+      <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 pb-4 ">
         <img
           src={assets.textLogo}
           alt="BLKNWS Logo"
-          className="h-[70px] ml-[-18px] md:ml-0 sm:h-[100px] md:h-[130px] object-contain mb-3"
+          className="h-[70px] ml-[-18px] md:ml-0 sm:h-[100px] md:h-[130px] object-contain "
         />
         <img
           src={assets.watch2}
           alt="BLKNWS Secondary"
-          className="h-[40px] sm:h-[40px] md:h-[100px] w-[220px] sm:w-[220px] md:w-[360px] object-contain mb-6"
+          className="h-[40px] sm:h-[40px] md:h-[100px] w-[220px] sm:w-[220px] md:w-[360px] object-contain"
         />
 
         {/* Custom Select Box */}
@@ -147,7 +147,7 @@ const Watch = () => {
       {/* <img src={assets.watch4} alt="BLKNWS Secondary" /> */}
 
       {/* Tour Section */}
-      <main className=" w-full mt-[-80px] bg-black text-white">
+      <main className=" w-full mt-[-60px] bg-black text-white">
         <div className="h-24 md:h-28 w-full lg:h-32" />
         <div className="w-full">
           <div className="" aria-hidden="true" />
@@ -163,7 +163,7 @@ const Watch = () => {
       </main>
 
       {/* Final Section */}
-      <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 py-10 md:py-16">
+      <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 p-10 md:py-16">
         <img
           src={assets.watch5}
           alt="BLKNWS Secondary"

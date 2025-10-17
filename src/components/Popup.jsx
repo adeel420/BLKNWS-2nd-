@@ -264,9 +264,9 @@ const Popup = ({ setPopup }) => {
       )}
 
       <div
-        className="w-full max-w-sm sm:max-w-lg md:max-w-2xl relative p-1 sm:p-6 md:p-8 
+        className="w-full max-w-sm  sm:max-w-lg md:max-w-2xl relative p-1 sm:p-6 md:p-8 
                    my-2 sm:my-8 
-                h-[96vh] sm:h-auto sm:max-h-screen z-40"
+                h-[96vh] sm:h-auto z-40"
         onClick={(e) => e.stopPropagation()}
       >
         <img
