@@ -44,17 +44,9 @@ const Community = () => {
 
       <div className="bg-black text-white min-h-screen px-2 sm:px-2 md:px-2 py-6 flex flex-col items-center">
         {/* Header Section */}
-        <header className={cn("w-full max-w-4xl mb-8")}>
+        {/* <header className={cn("w-full max-w-4xl mb-8")}>
           <div className="flex flex-wrap items-center justify-between gap-4 py-4">
-            {/* Left: Name */}
-            {/* <Link
-              to="#"
-              className="text-base sm:text-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-sm"
-            >
-              Dio Anthony
-            </Link> */}
-
-            {/* Center: bylines tag */}
+        
             <div
               className="hidden sm:flex items-center gap-2 text-sm opacity-80"
               aria-label="Section: bylines"
@@ -63,7 +55,7 @@ const Community = () => {
               <span>bylines</span>
             </div>
 
-            {/* Right: Instagram */}
+       
             <Link
               to="#"
               aria-label="Instagram"
@@ -72,7 +64,7 @@ const Community = () => {
               <Instagram className="w-5 h-5" />
             </Link>
           </div>
-        </header>
+        </header> */}
 
         {/* List Section */}
         <section className="w-full max-w-4xl">
