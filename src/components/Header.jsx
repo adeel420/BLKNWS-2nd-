@@ -12,7 +12,7 @@ const Header = ({
   return (
     <header className="w-full bg-transparent text-white z-50 px-2 sm:px-2 py-4">
       {/* Always a single-row layout (left: buffer/audio, right: links) */}
-      <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto flex flex-row items-center justify-center md:justify-between gap-6">
         {/* Left: Buffer / Audio Control */}
         <div className="flex items-center gap-2 sm:gap-3 relative">
           {/* Buffer Control */}
@@ -56,7 +56,7 @@ const Header = ({
           className="
             flex 
             justify-between mr-[-9px] items-center 
-            gap-4 sm:gap-4 md:gap-8 
+            gap-6 sm:gap-6 md:gap-8 
             text-[10px] sm:text-sm md:text-[16px] 
             font-bold
           "
