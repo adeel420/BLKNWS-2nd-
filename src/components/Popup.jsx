@@ -364,15 +364,7 @@ const Popup = ({ setPopup }) => {
                   checked={options.Policy}
                   onChange={() => handleOptionChange("Policy")}
                 />
-                <label
-                  className="text-xs w-[86%] sm:text-xs md:text-sm font-normal leading-snug overflow-hidden break-words"
-                  style={{
-                    display: "-webkit-box",
-                    WebkitBoxOrient: "vertical",
-                    WebkitLineClamp: 2,
-                    textOverflow: "clip",
-                  }}
-                >
+                <label className="text-xs w-[86%] sm:text-xs md:text-sm font-normal leading-snug overflow-hidden break-words">
                   I agree to receive marketing emails and understand that my
                   data may be used for remarketing and profiling{" "}
                   <Link
