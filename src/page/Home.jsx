@@ -186,7 +186,7 @@ const Home = () => {
         </section>
 
         {/* popup */}
-        <div className="bg-black  pt-8">
+        <div className="bg-black ml-5  pt-8">
           <Popup />
         </div>
       </div>
