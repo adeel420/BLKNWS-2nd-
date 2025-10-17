@@ -171,14 +171,17 @@ const Home = () => {
                       setIsMuted(true);
                     }
                   }}
-                  className="text-white flex flex-col items-center gap-2 font-semibold text-sm sm:text-5xl  cursor-pointer"
+                  className="text-white flex flex-col items-center gap-0 md:gap-2 font-semibold text-sm sm:text-5xl  cursor-pointer"
                 >
                   <span>
-                    <img src={assets.play} className="h-[40px] w-[40px] " />
+                    <img
+                      src={assets.play}
+                      className="h-[18px] mb-2 w-[18px] md:h-[40px] md:w-[40px] "
+                    />
                   </span>
 
                   <span>WATCH</span>
-                  <span>TRAILER</span>
+                  <span>TEASER</span>
                 </button>
               </div>
             )}
