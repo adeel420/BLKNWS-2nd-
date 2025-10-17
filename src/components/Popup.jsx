@@ -364,11 +364,11 @@ const Popup = ({ setPopup }) => {
                   checked={options.Policy}
                   onChange={() => handleOptionChange("Policy")}
                 />
-                <label className="text-xs w-[80%] sm:text-sm md:text-sm font-normal">
+                <label className="text-xs w-[85%] sm:text-sm md:text-sm font-normal">
                   I agree to receive marketing emails and understand that my
                   data may be used for remarketing and profiling{" "}
                   <Link
-                    className="cursor-pointer font-bold"
+                    className="cursor-pointer font-bold whitespace-nowrap"
                     target="_blank"
                     to={"/privacy-policy"}
                   >

@@ -10,9 +10,9 @@ const Header = ({
   setIsHoveringBuffer,
 }) => {
   return (
-    <header className="w-full bg-transparent text-white z-50 px-4 sm:px-6 py-4">
-      {/* Desktop layout (flex row) / Mobile layout (flex col-reverse) */}
-      <div className="max-w-7xl mx-auto flex md:flex-row items-left md:items-center justify-between gap-4 md:gap-0">
+    <header className="w-full bg-transparent text-white z-50 px-2 sm:px-2 py-4">
+      {/* Always a single-row layout (left: buffer/audio, right: links) */}
+      <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-4">
         {/* Left: Buffer / Audio Control */}
         <div className="flex items-center gap-2 sm:gap-3 relative">
           {/* Buffer Control */}
@@ -42,10 +42,10 @@ const Header = ({
 
           {/* Track Info */}
           <div className="text-white">
-            <h1 className="text-[6px] whitespace-nowrap md:text-[14px] font-semibold">
+            <h1 className="text-[8px] sm:text-[10px] md:text-[14px] font-semibold whitespace-nowrap">
               De Onde Vem
             </h1>
-            <h1 className="text-[6px] md:text-[14px] text-[#A6A6A6]">
+            <h1 className="text-[8px] sm:text-[10px] md:text-[14px] text-[#A6A6A6] whitespace-nowrap">
               Avila Santo
             </h1>
           </div>
@@ -54,40 +54,29 @@ const Header = ({
         {/* Right: Navigation */}
         <nav
           className="
-    flex 
-    w-full justify-between items-center text-center  /* full width + space between */
-    md:w-auto md:justify-end md:text-right  /* right-aligned on desktop */
-    px-0
-    gap-1 md:gap-8 
-    text-[10px] sm:text-sm md:text-[16px] 
-    font-bold
-  "
+            flex 
+            justify-end ml-[30px] items-center 
+            gap-4 sm:gap-4 md:gap-8 
+            text-[10px] sm:text-sm md:text-[16px] 
+            font-bold
+          "
         >
-          <Link to="/" className="flex-1 hover:text-gray-300 transition-colors">
+          <Link to="/" className="hover:text-gray-300 transition-colors">
             HOME
           </Link>
-          <Link
-            to="/watch"
-            className="flex-1 hover:text-gray-300 transition-colors"
-          >
+          <Link to="/watch" className="hover:text-gray-300 transition-colors">
             WATCH
           </Link>
           <Link
             to="/community"
-            className="flex-1 hover:text-gray-300 transition-colors"
+            className="hover:text-gray-300 transition-colors"
           >
             COMMUNITY
           </Link>
-          <Link
-            to="/credits"
-            className="flex-1 hover:text-gray-300 transition-colors"
-          >
+          <Link to="/credits" className="hover:text-gray-300 transition-colors">
             CREDITS
           </Link>
-          <Link
-            to="/rsvp"
-            className="flex-1 hover:text-gray-300 transition-colors"
-          >
+          <Link to="/rsvp" className="hover:text-gray-300 transition-colors">
             RSVP
           </Link>
         </nav>

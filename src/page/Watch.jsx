@@ -136,7 +136,7 @@ const Watch = () => {
       </div>
 
       {/* 3rd Section */}
-      <div className="bg-black text-white flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 ">
+      <div className="bg-black text-white flex flex-col items-center px-4 pt-6 sm:px-8 md:px-12 lg:px-16 ">
         <img
           src={assets.watch3}
           alt="BLKNWS Secondary"
