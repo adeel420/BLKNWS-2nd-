@@ -89,7 +89,7 @@ const Home = () => {
             </div>
 
             {/* Header */}
-            <div className="absolute w-[105%] md:w-[100%] inset-0 flex flex-col justify-between z-[3]">
+            <div className="absolute w-[104%] md:w-[100%] inset-0 flex flex-col justify-between z-[3]">
               <Header
                 handleToggleAudio={handleToggleAudio}
                 isMuted={isMuted}
