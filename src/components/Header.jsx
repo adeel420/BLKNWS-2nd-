@@ -55,7 +55,7 @@ const Header = ({
         <nav
           className="
             flex 
-            justify-end ml-[30px] items-center 
+            justify-end mr-[-9px] items-center 
             gap-4 sm:gap-4 md:gap-8 
             text-[10px] sm:text-sm md:text-[16px] 
             font-bold
