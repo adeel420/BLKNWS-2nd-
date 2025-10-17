@@ -153,7 +153,8 @@ const Home = () => {
             <video
               ref={videoRef}
               src={assets.videoWatch}
-              loop
+              // loop
+              controls
               playsInline
               className={`w-full h-full object-cover transition-opacity duration-700 ${
                 isPlaying ? "opacity-100" : "opacity-0"
