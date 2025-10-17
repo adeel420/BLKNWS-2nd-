@@ -305,6 +305,14 @@ const Popup = ({ setPopup }) => {
                 x
               </button>
             )}
+            {location.pathname === "/rsvp" && (
+              <button
+                className="absolute top-5 right-15 block md:hidden "
+                onClick={handleCloseClick}
+              >
+                x
+              </button>
+            )}
           </div>
 
           <form

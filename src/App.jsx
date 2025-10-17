@@ -7,6 +7,7 @@ import Watch from "./page/Watch";
 import Privacy_Policy from "./page/Privacy_Policy";
 import RSVP from "./page/RSVP";
 import Community from "./page/Community";
+import FooterWrapper from "./components/Footer";
 
 function App() {
   const location = useLocation();
@@ -20,13 +21,7 @@ function App() {
         <Route path="/rsvp" element={<RSVP />} />
         <Route path="/community" element={<Community />} />
       </Routes>
-      {location.pathname === "/" ? (
-        <div className="mt-[-350px] md:mt-0 ">
-          <Footer />
-        </div>
-      ) : (
-        <Footer />
-      )}
+      <FooterWrapper />
       {/* <Footer /> */}
     </>
   );
