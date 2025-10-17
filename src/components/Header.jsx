@@ -57,7 +57,7 @@ const Header = ({
             flex 
             justify-between mr-[-9px] items-center 
             gap-6 sm:gap-6 md:gap-8 
-            text-[10px] sm:text-sm md:text-[16px] 
+            text-[9px] sm:text-sm md:text-[16px] 
             font-bold
           "
         >

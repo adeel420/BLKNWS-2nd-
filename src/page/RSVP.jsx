@@ -80,11 +80,9 @@ const RSVP = () => {
       {/* Popup */}
       {/* ✅ Popup now appears above hero section */}
 
-      <div
-        className="fixed inset-0 flex items-center justify-center z-[9999] top-[50%] md:top-[0] "
-        // onClick={handleBackdropClick}
-      >
-        <div onClick={(e) => e.stopPropagation()}>
+      {/* Popup visually above everything but doesn't block header clicks */}
+      <div className="fixed inset-0 flex items-center justify-center z-[9999] top-[50%] md:top-[0] pointer-events-none">
+        <div className="pointer-events-auto">
           <Popup setPopup={setPopup} />
         </div>
       </div>

@@ -86,7 +86,7 @@ const Watch = () => {
         <div className="absolute inset-0 bg-black/40 z-[1]" />
 
         {/* Foreground Content */}
-        <div className="relative z-[2] w-full h-full">
+        <div className="absolute inset-0 flex flex-col justify-between z-[3] ">
           <Header />
         </div>
       </div>
