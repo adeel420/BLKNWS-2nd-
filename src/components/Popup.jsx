@@ -368,7 +368,7 @@ const Popup = ({ setPopup }) => {
                   I agree to receive marketing emails and understand that my
                   data may be used for remarketing and profiling{" "}
                   <Link
-                    className="cursor-pointer font-bold text-[10px] md:text-sm whitespace-nowrap"
+                    className="cursor-pointer font-bold text-[8px] md:text-sm whitespace-nowrap"
                     target="_blank"
                     to="/privacy-policy"
                   >
