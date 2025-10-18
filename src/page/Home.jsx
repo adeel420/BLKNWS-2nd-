@@ -4,8 +4,6 @@ import { assets } from "../assets/assets";
 import CursorText from "../components/CursorText";
 import { useNavigate } from "react-router-dom";
 import Popup from "../components/Popup";
-import { MdVolumeOff, MdVolumeUp, MdKeyboardArrowDown } from "react-icons/md";
-import SignupPopup from "../components/SignupPopup";
 
 const Home = () => {
   const [audioStarted, setAudioStarted] = useState(false);

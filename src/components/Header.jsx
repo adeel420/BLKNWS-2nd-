@@ -70,11 +70,7 @@ const Header = ({
           <Link to="/watch" className="hover:text-gray-300 transition-colors">
             WATCH
           </Link>
-          <Link
-            // to="/community"
-            onClick={() => setPopup(true)}
-            className="hover:text-gray-300 transition-colors"
-          >
+          <Link to="/signup" className="hover:text-gray-300 transition-colors">
             COMMUNITY
           </Link>
           <Link to="/credits" className="hover:text-gray-300 transition-colors">

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SignupPopup = ({ onClose }) => {
   const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,15 +52,14 @@ const SignupPopup = ({ onClose }) => {
 
   return (
     <div
-      className={`flex flex-col z-40 justify-center text-black items-center`}
+      className={`flex flex-col min-h-screen justify-center text-black items-center bg-black`}
+      style={{ zIndex: 9999 }}
       onClick={onClose}
     >
       <div
-        className="w-full max-w-sm  sm:max-w-lg md:max-w-2xl relative p-1 sm:p-6 md:p-8 my-2 sm:my-8 z-40"
+        className="w-full max-w-sm  sm:max-w-lg md:max-w-2xl relative p-1 sm:p-6 md:p-8 my-2 sm:my-8 "
+        style={{ zIndex: 9999 }}
         onClick={(e) => e.stopPropagation()}
-        style={{
-          zIndex: 9999999999999999999999999999999999999999999999999999999999999999999999999999999,
-        }}
       >
         <img
           src={assets.backSvg}
@@ -96,18 +96,25 @@ const SignupPopup = ({ onClose }) => {
               Signup Now
             </p>
 
-            <button className="absolute top-[5px] right-25 cursor-pointer hidden md:block">
+            <button
+              className="absolute top-[5px] right-25 cursor-pointer hidden md:block"
+              onClick={() => navigate("/")}
+            >
               x
             </button>
 
-            <button className="absolute top-15 right-12 block md:hidden ">
+            <button
+              className="absolute top-15 right-12 block md:hidden "
+              onClick={() => navigate("/")}
+            >
               x
             </button>
           </div>
 
           <form
-            className="signup-form space-y-2.5 mt-6 sm:space-y-2 flex-1 flex flex-col justify-center z-[40] md:ml-1"
+            className="signup-form space-y-2.5 mt-6 sm:space-y-2 flex-1 flex flex-col justify-center  md:ml-1"
             onSubmit={handleSubmit}
+            style={{ zIndex: 9999 }}
           >
             <input
               type="text"
@@ -156,15 +163,20 @@ const SignupPopup = ({ onClose }) => {
           </form>
 
           {/* ✅ Success or error message */}
-          {message && <p className="text-green-600 text-sm mt-4">{message}</p>}
-          {error && <p className="text-red-600 text-sm mt-4">{error}</p>}
+          {message && (
+            <p className="text-green-600 text-center ml-[-15%] text-sm mt-4">
+              {message}
+            </p>
+          )}
+          {error && (
+            <p className="text-red-600 text-center ml-[-15%] text-sm mt-4">
+              {error}
+            </p>
+          )}
 
           <span className="text-center ml-[-15%] mt-4 ">
             Already have an account?{" "}
-            <Link
-              className="text-[#042a91]"
-              onClick={() => setShowLoginPopup(true)}
-            >
+            <Link className="text-[#042a91]" to={"/login"}>
               Login
             </Link>
           </span>

@@ -2,8 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
 
-const LoginPopup = () => {
-  const navigate = useNavigate();
+const ForgetPassword = () => {
   return (
     <div
       className={`flex min-h-screen flex-col z-40 justify-center bg-black text-black items-center`}
@@ -41,8 +40,12 @@ const LoginPopup = () => {
               R S V P
             </h1>
             <p className="text-black text-center text-sm md:text-lg ml-[-5%] ">
-              Login Now
+              Forget Password
             </p>
+            <h4 className="text-xs text-black md:text-sm w-[80%] md:w-[60%] text-center ml-[8%] md:ml-[16%]  mt-3 text-center">
+              Enter your registered email address below, and we’ll send you a
+              link to reset your password.
+            </h4>
 
             <button
               className="absolute top-[5px] right-25 cursor-pointer hidden md:block"
@@ -73,16 +76,6 @@ const LoginPopup = () => {
               className="w-[90%] sm:w-[88%] h-10 sm:h-11 md:h-11 md:w-[400px] placeholder:text-[13px] bg-white border border-gray-300 rounded-md px-3 sm:px-4 text-center text-sm sm:text-base font-regular placeholder:font-medium placeholder:text-[black] focus:outline-none focus:ring-2 focus:ring-gray-400"
               required
             />
-            <input
-              type="password"
-              name="password"
-              //   value={formData.email}
-              //   onChange={handleInputChange}
-              placeholder="YOUR PASSWORD"
-              style={{ fontWeight: 400, fontSize: "16px" }}
-              className="w-[90%] sm:w-[88%] h-10 sm:h-11 md:h-11 md:w-[400px] placeholder:text-[13px] bg-white border border-gray-300 rounded-md px-3 sm:px-4 text-center text-sm sm:text-base font-regular placeholder:font-medium placeholder:text-[black] focus:outline-none focus:ring-2 focus:ring-gray-400"
-              required
-            />
 
             <div className="pt-0 sm:pt-0 md:pt-6 w-full flex items-center justify-center">
               <button
@@ -93,20 +86,14 @@ const LoginPopup = () => {
                   fontSize: "clamp(16px, 4vw, 24px)",
                 }}
               >
-                LOGIN
+                FORGET
               </button>
             </div>
           </form>
-          <Link
-            className="text-[#042a91] text-center ml-[-15%] mt-4 "
-            to={"/forget-password"}
-          >
-            Forget your password?
-          </Link>
           <span className="text-center ml-[-15%] mt-4 ">
-            Don't have an account?{" "}
-            <Link className="text-[#042a91]" to={"/signup"}>
-              Signup
+            Remember your password?{" "}
+            <Link className="text-[#042a91]" to={"/login"}>
+              Login
             </Link>
           </span>
         </div>
@@ -115,4 +102,4 @@ const LoginPopup = () => {
   );
 };
 
-export default LoginPopup;
+export default ForgetPassword;
