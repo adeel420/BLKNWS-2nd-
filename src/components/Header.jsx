@@ -1,13 +1,15 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
 import { assets } from "../assets/assets";
 import SignupPopup from "./SignupPopup";
 
+// Global audio instance
+let globalAudio = null;
+
 const Header = ({ isHoveringBuffer, setIsHoveringBuffer }) => {
   const [popup, setPopup] = useState(false);
   const token = localStorage.getItem("token");
-  const audioRef = useRef(null);
   const [audioStarted, setAudioStarted] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [localHovering, setLocalHovering] = useState(false);
@@ -19,29 +21,43 @@ const Header = ({ isHoveringBuffer, setIsHoveringBuffer }) => {
   const isHovering = isHomepage ? isHoveringBuffer : localHovering;
   const setIsHovering = isHomepage ? setIsHoveringBuffer : setLocalHovering;
 
-  const handleToggleAudio = () => {
-    if (!audioRef.current) return;
+  // Initialize global audio only once
+  useEffect(() => {
+    if (!globalAudio) {
+      globalAudio = new Audio(assets.audio);
+      globalAudio.loop = true;
+    }
+  }, []);
 
-    // Agar audio start nahi hua to start karo
+  // Sync state with global audio
+  useEffect(() => {
+    if (globalAudio) {
+      setAudioStarted(globalAudio.paused === false);
+      setIsMuted(globalAudio.muted);
+    }
+  }, [location.pathname]);
+
+  const handleToggleAudio = () => {
+    if (!globalAudio) return;
+
     if (!audioStarted) {
-      audioRef.current
+      globalAudio
         .play()
         .then(() => {
           setAudioStarted(true);
-          audioRef.current.muted = false;
+          globalAudio.muted = false;
           setIsMuted(false);
         })
         .catch((err) => console.log("Autoplay blocked:", err));
     } else {
-      // Audio chal raha hai to mute/unmute toggle karo
-      audioRef.current.muted = !audioRef.current.muted;
-      setIsMuted(audioRef.current.muted);
+      globalAudio.muted = !globalAudio.muted;
+      setIsMuted(globalAudio.muted);
     }
   };
 
   const handleStartAudio = () => {
-    if (audioRef.current && !audioStarted) {
-      audioRef.current
+    if (globalAudio && !audioStarted) {
+      globalAudio
         .play()
         .then(() => {
           setAudioStarted(true);
@@ -53,9 +69,6 @@ const Header = ({ isHoveringBuffer, setIsHoveringBuffer }) => {
 
   return (
     <>
-      {/* Audio element */}
-      <audio ref={audioRef} src={assets.audio} loop />
-
       <header
         className="w-full bg-transparent text-white z-50 px-2 sm:px-2 py-4"
         onClick={handleStartAudio}
