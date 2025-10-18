@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
 import { assets } from "../assets/assets";
+import SignupPopup from "./SignupPopup";
+import LoginPopup from "./LoginPopup";
 
 const Header = ({
   handleToggleAudio,
@@ -9,6 +11,7 @@ const Header = ({
   isHoveringBuffer,
   setIsHoveringBuffer,
 }) => {
+  const [popup, setPopup] = useState(false);
   return (
     <header className="w-full bg-transparent text-white z-50 px-2 sm:px-2 py-4">
       {/* Always a single-row layout (left: buffer/audio, right: links) */}
@@ -68,7 +71,8 @@ const Header = ({
             WATCH
           </Link>
           <Link
-            to="/community"
+            // to="/community"
+            onClick={() => setPopup(true)}
             className="hover:text-gray-300 transition-colors"
           >
             COMMUNITY
@@ -80,6 +84,10 @@ const Header = ({
             RSVP
           </Link>
         </nav>
+      </div>
+      <div className="z-40">
+        {popup && <SignupPopup onClose={() => setPopup(false)} />}
+        {/* {popup && <LoginPopup onClose={() => setPopup(false)} />} */}
       </div>
     </header>
   );

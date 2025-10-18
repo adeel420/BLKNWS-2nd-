@@ -5,6 +5,7 @@ import CursorText from "../components/CursorText";
 import { useNavigate } from "react-router-dom";
 import Popup from "../components/Popup";
 import { MdVolumeOff, MdVolumeUp, MdKeyboardArrowDown } from "react-icons/md";
+import SignupPopup from "../components/SignupPopup";
 
 const Home = () => {
   const [audioStarted, setAudioStarted] = useState(false);
@@ -82,7 +83,7 @@ const Home = () => {
                 className="w-[380px] h-[380px] md:w-[630px] md:h-[630px] object-cover z-[1]"
               ></video>
               <div
-                className="w-[380px] h-[380px] rounded-full md:w-[630px] md:h-[630px] absolute object-cover z-[40] vedio-hero"
+                className="w-[380px] h-[380px] rounded-full md:w-[630px] md:h-[630px] absolute object-cover z-20 vedio-hero"
                 onClick={handleToggleAudio}
                 ref={sectionRef}
               ></div>

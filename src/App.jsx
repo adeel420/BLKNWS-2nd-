@@ -8,6 +8,7 @@ import Privacy_Policy from "./page/Privacy_Policy";
 import RSVP from "./page/RSVP";
 import Community from "./page/Community";
 import FooterWrapper from "./components/Footer";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
         <Route path="/community" element={<Community />} />
       </Routes>
       <FooterWrapper />
+      <Toaster />
       {/* <Footer /> */}
     </>
   );

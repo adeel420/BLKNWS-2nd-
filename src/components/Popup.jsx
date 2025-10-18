@@ -184,13 +184,13 @@ const Popup = ({ setPopup }) => {
     return !formData.name.trim() && !formData.email.trim() && !selected;
   };
 
-  const handleBackdropClick = () => {
-    if (isFormEmpty()) {
-      setPopup(false);
-    } else {
-      toast.error("Please complete or clear the form before closing");
-    }
-  };
+  // const handleBackdropClick = () => {
+  //   if (isFormEmpty()) {
+  //     setPopup(false);
+  //   } else {
+  //     toast.error("Please complete or clear the form before closing");
+  //   }
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -231,7 +231,7 @@ const Popup = ({ setPopup }) => {
         Policy: false,
       });
       setSelected("");
-      setPopup(false);
+      // setPopup(false);
     } catch (err) {
       console.error(err);
       toast.error("Something went wrong! Please try again.");
@@ -247,7 +247,7 @@ const Popup = ({ setPopup }) => {
     if (location.pathname === "/rsvp") {
       navigate("/");
     }
-    setPopup(false);
+    // setPopup(false);
   };
 
   return (
