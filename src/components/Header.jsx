@@ -12,6 +12,7 @@ const Header = ({
   setIsHoveringBuffer,
 }) => {
   const [popup, setPopup] = useState(false);
+  const token = localStorage.getItem("token");
   return (
     <header className="w-full bg-transparent text-white z-50 px-2 sm:px-2 py-4">
       {/* Always a single-row layout (left: buffer/audio, right: links) */}
@@ -70,7 +71,10 @@ const Header = ({
           <Link to="/watch" className="hover:text-gray-300 transition-colors">
             WATCH
           </Link>
-          <Link to="/signup" className="hover:text-gray-300 transition-colors">
+          <Link
+            to={token ? "/community" : `/signup`}
+            className="hover:text-gray-300 transition-colors"
+          >
             COMMUNITY
           </Link>
           <Link to="/credits" className="hover:text-gray-300 transition-colors">

@@ -16,28 +16,6 @@ const ForgetPassword = () => {
   const [canResend, setCanResend] = useState(false);
   const [resendTimer, setResendTimer] = useState(0);
 
-  // Disable background scroll
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
-
-  // Resend timer
-  useEffect(() => {
-    let timer;
-    if (resendTimer > 0) {
-      timer = setTimeout(() => {
-        setResendTimer(resendTimer - 1);
-      }, 1000);
-    }
-    if (resendTimer === 0 && !canResend && step === "otp") {
-      setCanResend(true);
-    }
-    return () => clearTimeout(timer);
-  }, [resendTimer, canResend, step]);
-
   // Step 1: Send OTP to email
   const handleSendOTP = async (e) => {
     e.preventDefault();
@@ -59,8 +37,9 @@ const ForgetPassword = () => {
 
       setMessage(res.data.message || "OTP sent to your email!");
       setStep("otp");
-      setCanResend(false);
-      setResendTimer(60);
+      setTimeout(() => {
+        navigate("/reset-password");
+      }, 2000);
     } catch (err) {
       setError(
         err.response?.data?.error || "Failed to send OTP. Please try again."
@@ -260,101 +239,6 @@ const ForgetPassword = () => {
                   }}
                 >
                   {loading ? "Sending..." : "SEND OTP"}
-                </button>
-              </div>
-            </form>
-          )}
-
-          {/* ========== STEP 2: OTP ========== */}
-          {step === "otp" && (
-            <form
-              className="signup-form space-y-2.5 mt-6 sm:space-y-2 flex-1 flex flex-col justify-center z-[40] md:ml-1"
-              onSubmit={handleVerifyOTP}
-            >
-              <p className="text-center text-sm text-gray-600 mb-2">
-                OTP sent to: <strong>{email}</strong>
-              </p>
-
-              <input
-                type="text"
-                maxLength="6"
-                value={otp}
-                onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
-                placeholder="000000"
-                style={{ fontWeight: 400, fontSize: "16px" }}
-                className="w-[90%] sm:w-[88%] h-10 sm:h-11 md:h-11 md:w-[400px] placeholder:text-[13px] bg-white border border-gray-300 rounded-md px-3 sm:px-4 text-center text-sm sm:text-base font-regular placeholder:font-medium placeholder:text-[black] focus:outline-none focus:ring-2 focus:ring-gray-400"
-                required
-              />
-
-              <div className="pt-0 sm:pt-0 md:pt-6 w-full flex items-center justify-center">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-[160px] sm:w-[200px] ml-[-40px] bg-black hover:bg-gray-800 text-white h-7 sm:h-7 md:h-12 text-sm sm:text-base md:text-lg font-bold tracking-wider rounded-md cursor-pointer md:-ml-[100px] disabled:opacity-50"
-                  style={{
-                    fontWeight: 400,
-                    fontSize: "clamp(16px, 4vw, 24px)",
-                  }}
-                >
-                  {loading ? "Verifying..." : "VERIFY"}
-                </button>
-              </div>
-
-              <div className="text-center mt-4 ml-[-15%] space-y-2">
-                <button
-                  onClick={handleResendOTP}
-                  disabled={!canResend || loading}
-                  className="block text-blue-600 hover:text-blue-800 text-sm underline disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {canResend ? "Resend OTP" : `Resend in ${resendTimer}s`}
-                </button>
-                <button
-                  onClick={handleBackToEmail}
-                  type="button"
-                  className="block text-gray-600 hover:text-gray-800 text-sm underline"
-                >
-                  Change Email
-                </button>
-              </div>
-            </form>
-          )}
-
-          {/* ========== STEP 3: RESET PASSWORD ========== */}
-          {step === "resetPassword" && (
-            <form
-              className="signup-form space-y-2.5 mt-6 sm:space-y-2 flex-1 flex flex-col justify-center z-[40] md:ml-1"
-              onSubmit={handleResetPassword}
-            >
-              <input
-                type="password"
-                value={newPassword}
-                onChange={(e) => setNewPassword(e.target.value)}
-                placeholder="NEW PASSWORD"
-                style={{ fontWeight: 400, fontSize: "16px" }}
-                className="w-[90%] sm:w-[88%] h-10 sm:h-11 md:h-11 md:w-[400px] placeholder:text-[13px] bg-white border border-gray-300 rounded-md px-3 sm:px-4 text-center text-sm sm:text-base font-regular placeholder:font-medium placeholder:text-[black] focus:outline-none focus:ring-2 focus:ring-gray-400"
-                required
-              />
-              <input
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="CONFIRM PASSWORD"
-                style={{ fontWeight: 400, fontSize: "16px" }}
-                className="w-[90%] sm:w-[88%] h-10 sm:h-11 md:h-11 md:w-[400px] placeholder:text-[13px] bg-white border border-gray-300 rounded-md px-3 sm:px-4 text-center text-sm sm:text-base font-regular placeholder:font-medium placeholder:text-[black] focus:outline-none focus:ring-2 focus:ring-gray-400"
-                required
-              />
-
-              <div className="pt-0 sm:pt-0 md:pt-6 w-full flex items-center justify-center">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-[160px] sm:w-[200px] ml-[-40px] bg-black hover:bg-gray-800 text-white h-7 sm:h-7 md:h-12 text-sm sm:text-base md:text-lg font-bold tracking-wider rounded-md cursor-pointer md:-ml-[100px] disabled:opacity-50"
-                  style={{
-                    fontWeight: 400,
-                    fontSize: "clamp(16px, 4vw, 24px)",
-                  }}
-                >
-                  {loading ? "Resetting..." : "RESET PASSWORD"}
                 </button>
               </div>
             </form>

@@ -14,40 +14,6 @@ const VerifyEmail = () => {
   const [canResend, setCanResend] = useState(false);
   const [resendTimer, setResendTimer] = useState(0);
 
-  // Disable background scroll
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
-
-  // Get email from location state or signup
-  useEffect(() => {
-    const state = location.state;
-    if (state?.email) {
-      setEmail(state.email);
-    } else {
-      // Redirect to signup if no email found
-      navigate("/signup");
-    }
-    setCanResend(true);
-  }, [location, navigate]);
-
-  // Resend timer
-  useEffect(() => {
-    let timer;
-    if (resendTimer > 0) {
-      timer = setTimeout(() => {
-        setResendTimer(resendTimer - 1);
-      }, 1000);
-    }
-    if (resendTimer === 0 && !canResend) {
-      setCanResend(true);
-    }
-    return () => clearTimeout(timer);
-  }, [resendTimer, canResend]);
-
   // Handle Verify Email
   const handleVerifyEmail = async (e) => {
     e.preventDefault();
@@ -92,7 +58,7 @@ const VerifyEmail = () => {
 
     try {
       await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/user/forgot-password`,
+        `${import.meta.env.VITE_API_BASE_URL}/user/verify-email`,
         { email }
       );
       setMessage("Verification code sent to your email!");
@@ -208,17 +174,6 @@ const VerifyEmail = () => {
               ❌ {error}
             </p>
           )}
-
-          {/* Resend Code Button */}
-          <div className="text-center mt-4 ml-[-15%]">
-            <button
-              onClick={handleResendCode}
-              disabled={!canResend || loading}
-              className="text-blue-600 hover:text-blue-800 text-sm underline disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {canResend ? "Resend Code" : `Resend in ${resendTimer}s`}
-            </button>
-          </div>
 
           <span className="text-center ml-[-15%] mt-4 text-sm">
             Go back to{" "}

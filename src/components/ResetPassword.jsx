@@ -3,10 +3,10 @@ import { assets } from "../assets/assets";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const ResetPassword = ({ onClose }) => {
+const ResetPassword = ({ onClose, preFilledEmail = "" }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    email: "",
+    email: preFilledEmail,
     otp: "",
     newPassword: "",
   });
@@ -16,7 +16,6 @@ const ResetPassword = ({ onClose }) => {
   const [error, setError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
 
-  // Disable background scroll
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -29,7 +28,6 @@ const ResetPassword = ({ onClose }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Validate inputs
   const validateForm = () => {
     if (!formData.email || !formData.email.includes("@")) {
       setError("Please enter a valid email address");
@@ -54,7 +52,6 @@ const ResetPassword = ({ onClose }) => {
     return true;
   };
 
-  // Handle Reset Password API Call
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
@@ -80,9 +77,9 @@ const ResetPassword = ({ onClose }) => {
       setFormData({ email: "", otp: "", newPassword: "" });
       setConfirmPassword("");
 
-      // Redirect to login after 2 seconds
       setTimeout(() => {
         navigate("/login");
+        if (onClose) onClose();
       }, 2000);
     } catch (err) {
       setError(
@@ -96,11 +93,12 @@ const ResetPassword = ({ onClose }) => {
 
   const handleClose = () => {
     navigate("/");
+    if (onClose) onClose();
   };
 
   return (
     <div
-      className={`flex flex-col min-h-screen justify-center text-black items-center bg-black`}
+      className="flex flex-col min-h-screen justify-center text-black items-center bg-black"
       style={{ zIndex: 9999 }}
       onClick={onClose}
     >
@@ -119,6 +117,7 @@ const ResetPassword = ({ onClose }) => {
           className="block md:hidden signup-bg relative"
           alt="background"
         />
+
         <div className="absolute top-4 left-[5%] sm:top-12 md:left-[22%] w-[100%] sm:w-auto flex flex-col justify-center sm:justify-start md:w-[500px] md:-ml-11">
           <div className="text-center mb-3 sm:mb-0 md:-ml-14 rsvp-signup-div">
             <h1
@@ -134,22 +133,19 @@ const ResetPassword = ({ onClose }) => {
             <p className="text-black text-center text-sm md:text-lg ml-[-5%]">
               Reset Password
             </p>
-            <h4 className="text-xs text-black md:text-sm w-[80%] md:w-[60%] text-center ml-[8%] md:ml-[16%] mt-3">
-              Create a new password for your account below.
-            </h4>
 
             <button
-              className="absolute top-[5px] right-25 cursor-pointer hidden md:block"
+              className="absolute top-[5px] right-25 cursor-pointer hidden md:block text-lg"
               onClick={handleClose}
             >
-              x
+              ×
             </button>
 
             <button
-              className="absolute top-15 right-12 block md:hidden"
+              className="absolute top-15 right-12 block md:hidden text-lg"
               onClick={handleClose}
             >
-              x
+              ×
             </button>
           </div>
 
@@ -209,6 +205,18 @@ const ResetPassword = ({ onClose }) => {
               </button>
             </div>
 
+            {/* Confirm Password Input */}
+            <input
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="CONFIRM PASSWORD"
+              style={{ fontWeight: 400, fontSize: "16px" }}
+              className="w-[90%] sm:w-[88%] h-10 sm:h-11 md:h-11 md:w-[400px] placeholder:text-[13px] bg-white border border-gray-300 rounded-md px-3 sm:px-4 text-center text-sm sm:text-base font-regular placeholder:font-medium placeholder:text-[black] focus:outline-none focus:ring-2 focus:ring-gray-400"
+              required
+            />
+
+            {/* Submit Button */}
             <div className="pt-0 sm:pt-0 md:pt-6 w-full flex items-center justify-center">
               <button
                 type="submit"
@@ -224,7 +232,7 @@ const ResetPassword = ({ onClose }) => {
             </div>
           </form>
 
-          {/* Success or Error Message */}
+          {/* Messages */}
           {message && (
             <p className="text-green-600 text-center ml-[-15%] text-sm mt-4">
               ✅ {message}
@@ -235,13 +243,6 @@ const ResetPassword = ({ onClose }) => {
               ❌ {error}
             </p>
           )}
-
-          <span className="text-center ml-[-15%] mt-4 text-sm">
-            Remember your password?{" "}
-            <Link className="text-[#042a91] hover:underline" to={"/login"}>
-              Login
-            </Link>
-          </span>
         </div>
       </div>
     </div>

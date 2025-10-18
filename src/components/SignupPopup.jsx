@@ -41,7 +41,9 @@ const SignupPopup = ({ onClose }) => {
       );
       setMessage(res.data.message || "Signup successful!");
       setFormData({ name: "", email: "", password: "" });
-      navigate("/verify-email");
+      setTimeout(() => {
+        navigate("/verify-email");
+      }, 2000);
     } catch (err) {
       setError(
         err.response?.data?.error || "Something went wrong. Please try again."
