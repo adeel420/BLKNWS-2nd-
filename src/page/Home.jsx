@@ -81,7 +81,7 @@ const Home = () => {
                 className="w-[380px] h-[380px] md:w-[630px] md:h-[630px] object-cover z-[1]"
               ></video>
               <div
-                className="w-[380px] h-[380px] rounded-full md:w-[630px] md:h-[630px] absolute object-cover z-20 vedio-hero"
+                className="w-[380px] h-[380px] rounded-full bg-pink-400 md:w-[600px] md:h-[500px] absolute object-cover z-20 "
                 onClick={handleToggleAudio}
                 ref={sectionRef}
               ></div>
