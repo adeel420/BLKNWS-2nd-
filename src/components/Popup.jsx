@@ -380,10 +380,10 @@ const Popup = ({ setPopup }) => {
                   checked={options.Policy}
                   onChange={() => handleOptionChange("Policy")}
                 />
-                <label className="text-[11px] w-[86%] md:w-[77%] sm:text-[11px] md:text-sm font-normal leading-snug overflow-hidden break-words">
+                <label className="text-[11px] w-[86%] md:w-[64%] sm:text-[11px] md:text-sm font-normal leading-snug overflow-hidden break-words">
                   I agree to receive marketing emails and understand that my
                   data may be used for remarketing and profiling{" "}
-                  <br className="hidden md:block" />
+                  {/* <br className="hidden md:block" /> */}
                   <Link
                     className="cursor-pointer font-bold text-xs md:text-sm whitespace-nowrap"
                     target="_blank"

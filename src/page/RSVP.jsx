@@ -54,21 +54,11 @@ const RSVP = () => {
               playsInline
               className="w-[380px] h-[380px] md:w-[630px] md:h-[630px] object-cover z-[1]"
             ></video>
-            {/* <div
-              className="w-[380px] h-[380px] rounded-full md:w-[630px] md:h-[630px] absolute object-cover z-[40] vedio-hero"
-              onClick={handleToggleAudio}
-              ref={sectionRef}
-            ></div> */}
           </div>
 
           {/* Header */}
           <div className="absolute inset-0 flex flex-col justify-between z-[3]">
-            <Header
-            // handleToggleAudio={handleToggleAudio}
-            // isMuted={isMuted}
-            // isHoveringBuffer={isHoveringBuffer}
-            // setIsHoveringBuffer={setIsHoveringBuffer}
-            />
+            <Header />
           </div>
 
           {/* Cursor Text */}
@@ -81,7 +71,7 @@ const RSVP = () => {
       {/* ✅ Popup now appears above hero section */}
 
       {/* Popup visually above everything but doesn't block header clicks */}
-      <div className="fixed inset-0 flex items-center justify-center z-[9999] top-[50%] md:top-[0] pointer-events-none">
+      <div className="fixed inset-0 flex items-center justify-center z-[9999] top-[50%] md:top-[0] pointer-events-none md:ml-[-6%] ">
         <div className="pointer-events-auto">
           <Popup setPopup={setPopup} />
         </div>
