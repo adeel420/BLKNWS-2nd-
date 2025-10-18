@@ -159,12 +159,6 @@ const LoginPopup = () => {
             </p>
           )}
 
-          <Link
-            className="text-[#042a91] text-center ml-[-15%] mt-4 hover:underline"
-            to={"/forgot-password"}
-          >
-            Forget your password?
-          </Link>
           <span className="text-center ml-[-15%] mt-4">
             Don't have an account?{" "}
             <Link className="text-[#042a91] hover:underline" to={"/signup"}>

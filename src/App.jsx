@@ -11,9 +11,9 @@ import FooterWrapper from "./components/Footer";
 import { Toaster } from "react-hot-toast";
 import SignupPopup from "./components/SignupPopup";
 import LoginPopup from "./components/LoginPopup";
-import VerifyEmail from "./components/VerifyEmail";
-import ForgetPassword from "./components/ForgetPassword";
-import ResetPassword from "./components/ResetPassword";
+// import VerifyEmail from "./components/VerifyEmail";
+// import ForgetPassword from "./components/ForgetPassword";
+// import ResetPassword from "./components/ResetPassword";
 
 function App() {
   const location = useLocation();
@@ -30,9 +30,9 @@ function App() {
         <Route path="/community" element={<Community />} />
         <Route path="/signup" element={<SignupPopup />} />
         <Route path="/login" element={<LoginPopup />} />
-        <Route path="/verify-email" element={<VerifyEmail />} />
+        {/* <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/forgot-password" element={<ForgetPassword />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} /> */}
       </Routes>
       {!hideFooterPath && <FooterWrapper />}
       <Toaster />

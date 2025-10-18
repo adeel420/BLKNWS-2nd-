@@ -42,7 +42,7 @@ const SignupPopup = ({ onClose }) => {
       setMessage(res.data.message || "Signup successful!");
       setFormData({ name: "", email: "", password: "" });
       setTimeout(() => {
-        navigate("/verify-email");
+        navigate("/login");
       }, 2000);
     } catch (err) {
       setError(
@@ -185,9 +185,6 @@ const SignupPopup = ({ onClose }) => {
           </span>
         </div>
       </div>
-      {showLoginPopup && (
-        <LoginPopup onClose={() => setShowLoginPopup(false)} />
-      )}
     </div>
   );
 };
