@@ -86,7 +86,7 @@ const SignupPopup = ({ onClose }) => {
         >
           <div className="text-center mb-3 sm:mb-0 md:-ml-14 rsvp-signup-div">
             <h1
-              className="text-lg md:-ml-8 sm:text-xl md:text-3xl font-light tracking-[0.2em] sm:tracking-[0.3em] text-gray-800 mb-2 sm:mb-4 item-center justify-center flex mx-auto"
+              className="text-lg ml-[-3px] md:-ml-8 sm:text-xl md:text-3xl font-light tracking-[0.2em] sm:tracking-[0.3em] text-gray-800 mb-2 sm:mb-4 item-center justify-center flex mx-auto"
               style={{
                 fontWeight: 400,
                 fontSize: "clamp(18px, 4vw, 32px)",
