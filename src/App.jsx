@@ -31,7 +31,7 @@ function App() {
         <Route path="/signup" element={<SignupPopup />} />
         <Route path="/login" element={<LoginPopup />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
-        <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/forgot-password" element={<ForgetPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
       {!hideFooterPath && <FooterWrapper />}
